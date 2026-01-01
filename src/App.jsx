@@ -1,7 +1,7 @@
 import Header from './components/Header/Header.jsx'
 import Coreconcept from './components/Coreconcept/Coreconcept.jsx';
 import { CORE_CONCEPTS } from './data.js';
-
+import TebButton from './components/TebButton/TebButton.jsx'
 
 function App() {
   return (
@@ -21,6 +21,15 @@ function App() {
             />
           </ul>
         </section>
+        <scetion id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TebButton label="Component" />
+            <TebButton label="JSX" />
+            <TebButton label="Props" />
+            <TebButton label="State" />
+          </menu>
+        </scetion>
       </main>
     </div>
   );

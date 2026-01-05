@@ -2,11 +2,12 @@ import { useState } from 'react';
 import Header from './components/Header/Header.jsx'
 import Coreconcept from './components/Coreconcept/Coreconcept.jsx';
 import { CORE_CONCEPTS } from './data.js';
-import TebButton from './components/TebButton/TebButton.jsx'
+import TebButton from './components/TebButton/TebButton.jsx';
+import { EXAMPLES } from './data.js';
 
 function App() {
   
-  const [selectedTopic, setSelectedTopic] = useState('Please click a button.')
+  const [selectedTopic, setSelectedTopic] = useState('components')
 
   function clickSource (selecteButton){
     setSelectedTopic(selecteButton);
@@ -30,15 +31,22 @@ function App() {
             />
           </ul>
         </section>
+        
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TebButton label="Component" onSelect={()=> clickSource('Component')} />
-            <TebButton label="JSX" onSelect={()=> clickSource('JSX')} />
-            <TebButton label="Props" onSelect={()=> clickSource('Props')} />
-            <TebButton label="State" onSelect={()=> clickSource('State')} />
+            <TebButton label="Component" onSelect={()=> clickSource('components')} />
+            <TebButton label="JSX" onSelect={()=> clickSource('jsx')} />
+            <TebButton label="Props" onSelect={()=> clickSource('props')} />
+            <TebButton label="State" onSelect={()=> clickSource('state')} />
           </menu>
-          {selectedTopic}
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].description}</p>
+            <pre>
+              <code>{EXAMPLES[selectedTopic].code}</code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>

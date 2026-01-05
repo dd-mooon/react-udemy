@@ -4,6 +4,10 @@ import { CORE_CONCEPTS } from './data.js';
 import TebButton from './components/TebButton/TebButton.jsx'
 
 function App() {
+  function clickSource (selecteButton){
+    console.log(selecteButton);
+  }
+
   return (
     <div>
       <Header />
@@ -21,15 +25,15 @@ function App() {
             />
           </ul>
         </section>
-        <scetion id="examples">
+        <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TebButton label="Component" />
-            <TebButton label="JSX" />
-            <TebButton label="Props" />
-            <TebButton label="State" />
+            <TebButton label="Component" onSelect={()=> clickSource('Component')} />
+            <TebButton label="JSX" onSelect={()=> clickSource('JSX')} />
+            <TebButton label="Props" onSelect={()=> clickSource('Props')} />
+            <TebButton label="State" onSelect={()=> clickSource('State')} />
           </menu>
-        </scetion>
+        </section>
       </main>
     </div>
   );

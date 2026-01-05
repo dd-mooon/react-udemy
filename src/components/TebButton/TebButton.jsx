@@ -1,5 +1,6 @@
-export default function TebButton({ label }) {
+export default function TebButton({ label, onSelect }) {
+
     return (
-        <li><button>{label}</button></li>
+        <li><button onClick={onSelect}>{label}</button></li>
     )
 }

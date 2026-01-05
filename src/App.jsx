@@ -7,7 +7,7 @@ import { EXAMPLES } from './data.js';
 
 function App() {
   
-  const [selectedTopic, setSelectedTopic] = useState('components')
+  const [selectedTopic, setSelectedTopic] = useState();
 
   function clickSource (selecteButton){
     setSelectedTopic(selecteButton);
@@ -40,13 +40,17 @@ function App() {
             <TebButton label="Props" onSelect={()=> clickSource('props')} />
             <TebButton label="State" onSelect={()=> clickSource('state')} />
           </menu>
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectedTopic].title}</h3>
-            <p>{EXAMPLES[selectedTopic].description}</p>
-            <pre>
-              <code>{EXAMPLES[selectedTopic].code}</code>
-            </pre>
-          </div>
+        
+          {!selectedTopic && <p>Plesa click a button.</p>}
+          {selectedTopic &&
+            <div id="tab-content">
+              <h3>{EXAMPLES[selectedTopic].title}</h3>
+              <p>{EXAMPLES[selectedTopic].description}</p>
+              <pre>
+                <code>{EXAMPLES[selectedTopic].code}</code>
+              </pre>
+            </div>
+          }
         </section>
       </main>
     </div>

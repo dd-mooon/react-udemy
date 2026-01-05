@@ -1,11 +1,16 @@
+import { useState } from 'react';
 import Header from './components/Header/Header.jsx'
 import Coreconcept from './components/Coreconcept/Coreconcept.jsx';
 import { CORE_CONCEPTS } from './data.js';
 import TebButton from './components/TebButton/TebButton.jsx'
 
 function App() {
+  
+  const [selectedTopic, setSelectedTopic] = useState('Please click a button.')
+
   function clickSource (selecteButton){
-    console.log(selecteButton);
+    setSelectedTopic(selecteButton);
+    console.log(selectedTopic);
   }
 
   return (
@@ -33,6 +38,7 @@ function App() {
             <TebButton label="Props" onSelect={()=> clickSource('Props')} />
             <TebButton label="State" onSelect={()=> clickSource('State')} />
           </menu>
+          {selectedTopic}
         </section>
       </main>
     </div>

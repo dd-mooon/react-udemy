@@ -35,10 +35,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TebButton label="Component" onSelect={()=> clickSource('components')} />
-            <TebButton label="JSX" onSelect={()=> clickSource('jsx')} />
-            <TebButton label="Props" onSelect={()=> clickSource('props')} />
-            <TebButton label="State" onSelect={()=> clickSource('state')} />
+            <TebButton label="Component" isSelected = {selectedTopic === 'components'} onSelect={()=> clickSource('components')} />
+            <TebButton label="JSX" isSelected = {selectedTopic === 'jsx'} onSelect={()=> clickSource('jsx')} />
+            <TebButton label="Props" isSelected = {selectedTopic === 'props'} onSelect={()=> clickSource('props')} />
+            <TebButton label="State" isSelected = {selectedTopic === 'state'} onSelect={()=> clickSource('state')} />
           </menu>
         
           {!selectedTopic && <p>Plesa click a button.</p>}

@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import TebButton from './TebButton/TebButton.jsx';
 import { EXAMPLES } from '../data.js';
+import Section from'./Section.jsx'
 
 export default function Examples (){
     
@@ -12,8 +13,7 @@ export default function Examples (){
   }
   
   return (
-        <section id="examples">
-          <h2>Examples</h2>
+        <Section id="examples" title="Examples">
           <menu>
             <TebButton label="Component" isSelected = {selectedTopic === 'components'} onSelect={()=> clickSource('components')} />
             <TebButton label="JSX" isSelected = {selectedTopic === 'jsx'} onSelect={()=> clickSource('jsx')} />
@@ -31,6 +31,6 @@ export default function Examples (){
               </pre>
             </div>
           }
-        </section>
+        </Section>
   )
 }

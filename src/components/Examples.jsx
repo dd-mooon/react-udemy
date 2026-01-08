@@ -28,7 +28,9 @@ export default function Examples (){
   
   return (
         <Section id="examples" title="Examples">
-          <Tabs buttons={
+          <Tabs 
+          buttonContainer="menu"
+          buttons={
           <>
             <TebButton label="Component" isSelected = {selectedTopic === 'components'} onSelect={()=> clickSource('components')} />
             <TebButton label="JSX" isSelected = {selectedTopic === 'jsx'} onSelect={()=> clickSource('jsx')} />
